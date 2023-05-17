@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_25_022534) do
+ActiveRecord::Schema.define(version: 2023_05_17_013651) do
 
   create_table "beers", force: :cascade do |t|
     t.string "brand"
     t.string "style"
     t.string "country"
     t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string "url"
+    t.string "title"
+    t.string "tag"
+    t.boolean "archived", default: false
+    t.boolean "faved", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
